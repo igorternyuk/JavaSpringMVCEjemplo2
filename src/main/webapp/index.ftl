@@ -5,7 +5,7 @@
     <title>CRUD</title>
 </head>
 <body>
-    <h1>Hello from web</h1>
-    <a href="/hello">Hello page</a>
+    <h1>Client management</h1>
+    <a href="/clients">Client list</a>
 </body>
 </html>

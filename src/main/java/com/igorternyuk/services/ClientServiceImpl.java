@@ -15,7 +15,28 @@ import java.util.List;
 public class ClientServiceImpl implements ClientService {
     @Autowired
     private ClientDAO clientDAO;
+
+    public void addNew(Client client) {
+        clientDAO.addNew(client);
+    }
+
+    public void update(Client client) {
+        clientDAO.update(client);
+    }
+
+    public Client getById(int id) {
+        return clientDAO.getById(id);
+    }
+
+    public List<Client> findByName(String filter) {
+        return clientDAO.findByName(filter);
+    }
+
     public List<Client> getAll() {
         return clientDAO.getAll();
+    }
+
+    public void remove(int id) {
+        clientDAO.remove(id);
     }
 }

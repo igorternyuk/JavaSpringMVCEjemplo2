@@ -11,5 +11,10 @@ import java.util.List;
 
 
 public interface ClientService {
+    void addNew(Client client);
+    void update(Client client);
+    Client getById(int id);
+    List<Client> findByName(String filter);
     List<Client> getAll();
+    void remove(int id);
 }

@@ -5,6 +5,7 @@ import com.igorternyuk.dao.ClientDAOImpl;
 import com.igorternyuk.services.ClientService;
 import com.igorternyuk.services.ClientServiceImpl;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -15,6 +16,7 @@ import javax.sql.DataSource;
  * Created by zenko on 01.02.19.
  */
 @Configuration
+@ComponentScan(basePackages = {"com.igorternyuk.services", "com.igorternyuk.dao"})
 public class ClientsConfig {
     @Bean
     public JdbcTemplate getJdbcTemplate(){
@@ -29,15 +31,5 @@ public class ClientsConfig {
         source.setPassword("1319");
         source.setDriverClassName("com.mysql.jdbc.Driver");
         return source;
-    }
-
-    @Bean
-    public ClientDAO getClientDAO(){
-        return new ClientDAOImpl();
-    }
-
-    @Bean
-    public ClientService getClientService(){
-        return new ClientServiceImpl();
     }
 }
